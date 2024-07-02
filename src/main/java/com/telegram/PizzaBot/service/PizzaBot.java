@@ -19,24 +19,11 @@ public class PizzaBot extends TelegramLongPollingBot {
 	@Override
 	public void onUpdateReceived(Update update){
 		try {
-
 			SendMessage sendMessage = messageService.messageReceiver(update);
 			execute(sendMessage);
 		} catch (TelegramApiException e) {
 			e.printStackTrace();
 		}
-//		String messageText = update.getMessage().getText();
-//		String chatId = update.getMessage().getChatId().toString();
-//
-//		SendMessage sendMessage = new SendMessage();
-//		sendMessage.setText(messageText);
-//		sendMessage.setChatId(chatId);
-//
-//		try {
-//			this.execute(sendMessage);
-//		}catch (Exception e){
-//			throw new RuntimeException(e);
-//		}
 	}
 
 	@Override
