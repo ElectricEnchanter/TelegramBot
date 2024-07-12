@@ -1,0 +1,13 @@
+services:
+  pizza-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: pizza-bot
+    network_mode: host
+
+    environment:
+      - "JAVA_OPTS="
+
+    restart: always

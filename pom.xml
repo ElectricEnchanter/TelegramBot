@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.telegram</groupId>
 	<artifactId>PizzaBot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<name>PizzaBot</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -64,16 +64,13 @@
 			<artifactId>telegrambots-abilities</artifactId>
 			<version>6.7.0</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
-		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -81,8 +78,18 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.telegram.PizzaBot.Main</mainClass>
+					<layout>JAR</layout>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
